@@ -1,0 +1,8 @@
+<% url = SpecialBlog::Application.routes.url_helpers %>
+$(document).ready(function(){
+  var currentPage = 1;
+  $(".load_more").click(function(){
+    $.ajax('?c_page=' + ++currentPage, {asynchronous:true, evalScripts:true, method:'get'});
+  $(this).text("loading..");
+  });
+});

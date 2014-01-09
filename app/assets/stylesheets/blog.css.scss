@@ -1,0 +1,85 @@
+.categories_container{
+    float: right;
+}
+.category_item_container{
+    text-align: right;
+    color: #ffffff;
+    font-size: 17px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #3f96f7;
+    border-radius: 5px;
+    width: 160px;
+    height: 40px;
+    line-height: 20px;
+}
+.category_item_container:hover{
+    background-color: #0074f7;
+}
+.post_item{
+    width: 100%;
+    padding: 10px;
+}
+.post_item span{
+    display: table-cell;
+    float: left;
+    text-align: center;
+    color: #ffffff;
+    font-size: 19px;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f62972;
+    border-radius: 4px;
+    width: 65px;
+    height: 65px;
+    line-height: 45px;
+}
+.post_item .post_item_description {
+    width: 10%;
+    padding-left: 12px;
+    display: table-cell;
+}
+.post_item_description .title{
+    margin-top: 10px;
+    color: #2c2b2b;
+    font-size: 19px;
+    font-weight: normal;
+}
+.post_item_description .title a{
+    color: #2c2b2b;
+}
+.post_item_description .title a:hover{
+    color: #ffffff;
+    background-color: #1abc9c;
+}
+.post_item_description .summary{
+    color: #4a4747;
+    font-size: 15px;
+    margin-top: -10px;
+    padding-left: 10px;
+    line-height: 1.3em;
+    word-break: break-word;
+}
+.post_item_description .time{
+    text-align: right;
+    font-size: 13px;
+    color: #2c2b2b;
+}
+/* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 40em) {
+    .post_item span{
+        font-size: 10px;
+        width: 50px;
+        height: 50px;
+        line-height: 35px;
+    }
+    .post_item .post_item_description{
+        padding-left: 1px;
+    }
+    .post_item_description .summary{
+        max-height: 2.5em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -o-text-overflow:ellipsis;
+    }
+}

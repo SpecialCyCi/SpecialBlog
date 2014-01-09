@@ -1,0 +1,6 @@
+$("<%= j(render object: @comments, partial: "articles/comments") %>").appendTo($("#comments_list"));
+<% if @comments.blank? %>
+$(".load_more").css("display", "none");
+<% else %>
+$(".load_more").text("load more...");
+<% end %>

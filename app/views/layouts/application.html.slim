@@ -1,0 +1,51 @@
+doctype html
+html
+  head
+    title SpecialBlog
+    meta content=("text/html; charset=UTF-8") http-equiv="content-type" /
+    meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js" 
+    = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  body
+    /! header start
+    .header_shadow_bar.clear
+    #header.row
+      .medium-7.large-6.columns.show-for-medium-up.logo_container
+        a href="" 
+          img alt="" src=(asset_path "logo.png") /
+      .medium-5.large-6.columns.nav_container
+        div
+          a href=""  Blog
+          span |
+          a href=""  Works
+          span |
+          a href=""  Me
+          .clear
+    .header_color_bar.clear
+    - if !flash[:notice].blank? or !flash[:alert].blank?
+      .flash
+        = notice
+        = alert
+    /! header end
+    /! body  start
+    #body.row
+      = yield
+    /! body end
+    /! footer start
+    span.footer_color_bar.clear
+    #footer.row
+      .large-8.columns.website_container
+        p About this site
+        p style=("padding-left: 6px") 
+          | This site is a personal web by Special, for record his life or other things.
+          | And the source code of this site is on Github, design PSD is on Link.You
+          | can use all the resource free above all.
+        p
+          | Copyleft 2013 Special(
+          a href="mailto:specialcyci@gmail.com" specialcyci@gmail.com
+          | )
+      .large-4.columns.show-for-large-up.footer_logo_container
+        img alt="" src=(asset_path "footer_logo.png") /
+    /! footer end

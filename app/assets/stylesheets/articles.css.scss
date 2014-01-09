@@ -1,0 +1,117 @@
+#post_content, #comments_container {
+    margin-top: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 50px;
+}
+#post_content .title{
+    margin: auto;
+    text-align: center;
+    padding: 15px;
+    font-size: 23px;
+    color: #2c2b2b;
+}
+#post_content .time{
+    text-align: right;
+    font-style: oblique;
+    font-size: 18px;
+    color: #e0d8d8;
+}
+#post_content .content{
+    margin-top: 30px;
+    line-height: 2em;
+    font-size: 16px;
+    color: #727070;
+}
+#comments_container .title{
+    color: #524f4f;
+    font-size: 20px;
+}
+.comment_item{
+    padding: 20px;
+}
+/* comment item avatar */
+.comment_item img{
+    float: left;
+    display: table-cell;
+    width: 80px;
+    height: 80px;
+}
+.comment_item .details{
+    padding-left: 15px;
+    display: table-cell;
+    width: 10%;
+}
+.comment_item .nickname{
+    color: #2b2929;
+    font-size: 16px;
+    font-weight: bold;
+}
+.comment_item .content{
+    color: #524f4f;
+    padding-left: 17px;
+}
+.comment_item .time{
+    font-size: 15px;
+    text-align: right;
+    color: #524f4f;
+    margin-top: 20px;
+}
+.reply_item{
+    background-color: #f6f4f4;
+    border-radius: 5px;
+    padding: 10px;
+}
+.reply_item .nickname, .reply_item .content{
+    color: #979393;
+}
+.comment_box{
+    margin-top: 10px;
+}
+.input_div{
+    margin-top: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.input_div label{
+    color: #aaa7a7;
+    font-size: 17px;
+}
+.input_div input{
+    margin-top: 10px;
+    width: 100%;
+}
+.input_div textarea{
+    margin-top: 10px;
+    width: 100%;
+    height: 10em;
+    resize: none;
+}
+.input_div input, .input_div textarea{
+    border: 1px dashed #bfbfbf;
+    padding: 10px;
+    border-radius: 5px;
+}
+.comment_box input[type="submit"]{
+    float: right;
+    width: 80px;
+    height: 30px;
+    font-size: 16px;
+    color: #ffffff;
+    background: #05c67f;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 0.5em;
+}
+.comment_box input[type="submit"]:hover{
+    background: #08df91;
+}
+@media only screen and (max-width: 40em) {
+    /* make avatar image small in small screen */
+    .comment_item img{
+        width: 50px;
+        height: 50px;
+    }
+}

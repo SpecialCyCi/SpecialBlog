@@ -1,0 +1,12 @@
+- comments.each do |comment|
+  .comment_item
+    .split
+    img src = asset_path("unknow_avatar.png")
+    .details
+      .nickname
+        = comment.nickname
+      .content
+        = comment.content
+      .time
+        = l(comment.created_at, format: :long)
+
