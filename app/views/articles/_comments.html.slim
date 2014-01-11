@@ -5,8 +5,22 @@
     .details
       .nickname
         = comment.nickname
+        span.operation
+          a.quote id=comment.id nickname=comment.nickname quote
+          - if admin_signed_in?
+            | &nbsp;
+            a href="" delete
       .content
-        = comment.content
+        p
+          = comment.content
+        - if comment.try(:parent_comment)
+          - parent_comment = comment.parent_comment
+          .reply_item
+            .nickname
+              = parent_comment.nickname
+            .content
+              p
+                = parent_comment.content
       .time
         = l(comment.created_at, format: :long)
 

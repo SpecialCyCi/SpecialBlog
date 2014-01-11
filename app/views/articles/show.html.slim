@@ -13,26 +13,9 @@
     | )
   #comments_list
     = render object: @comments, partial: "articles/comments"
-    .comment_item
-      .split
-      img src = asset_path("unknow_avatar.png")
-      .details
-        .nickname
-          | specialcyci#gmail.com
-        .content
-          p
-            | yes,check you email.
-          .reply_item
-            .nickname
-              | kids#gmail.com
-            .content
-              p
-                | hey, can you send a copy of this source code to me?
-        .time
-          | 2013/12/12 18:30
   .load_more
     | load more...
-  .title
+  .title id="comment_box_title"
     | Leave comment
   .comment_box
     = form_for [ @article, Comment.new ] do |f|

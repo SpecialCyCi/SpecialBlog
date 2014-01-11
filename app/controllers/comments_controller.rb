@@ -1,12 +1,9 @@
 class CommentsController < ApplicationController
   before_filter :find_commentable
 
-  def index
-    @comments = @commentable.comments
-  end
-
   def create
     @comment = @commentable.comments.new(params[:comment])
+    @comment.parent_comment = Comment.find(params[:parent]) if params.try(:[], :parent)
     @comment.save
     if @comment.save
       flash[:notice] = "Thank your comment."

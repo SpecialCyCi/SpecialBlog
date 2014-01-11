@@ -1,7 +1,16 @@
 $(document).ready(function(){
+  // load more function;
   var currentPage = 1;
   $(".load_more").click(function(){
     $.ajax('?c_page=' + ++currentPage, {asynchronous:true, evalScripts:true, method:'get'});
   $(this).text("loading..");
+  });
+
+  // quote function;
+  $("a.quote").click(function(){
+    $("form").append('<input type="hidden" name="parent" value="' + $(this).attr("id") + '"/>');
+    $("#comment_nickname").focus();
+    $("#comment_box_title").text("Reply :" + $(this).attr("nickname"));
+    return false;
   });
 });

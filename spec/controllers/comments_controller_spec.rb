@@ -13,24 +13,7 @@ describe CommentsController do
     FactoryGirl.create_list :article, 10
   end
 
-  describe "GET index" do
-
-    before do
-      comments = FactoryGirl.create_list :comment, 10 
-      article.comments = comments
-      article.save
-      # 干扰项
-      FactoryGirl.create_list :comment, 10
-    end
-
-    it "should get corresponding article's comments" do
-      get :index, article_id: article.id
-      assigns(:comments).should eq article.comments
-    end
-    
-  end
-
-  describe "POST create" do
+   describe "POST create" do
    
     it "should create a comment on corresponding article" do
       # 期望{}里代码使 Comment.count + 1
@@ -50,5 +33,13 @@ describe CommentsController do
       }.to change(Comment, :count).by(0)
     end
     
+    # 可以引用回复
+    it "should create a create with par.nt comment" do
+      parent_comment = FactoryGirl.create :comment, commentable: article
+      post :create, article_id: article.id, parent: parent_comment.id, comment: valid_attributes
+      puts assigns(:comment).inspect
+      assigns(:comment).parent_comment.should eq parent_comment
+    end
+
   end
 end

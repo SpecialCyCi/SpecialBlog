@@ -5,7 +5,7 @@
     .post_item
       .split
       span
-        | TAG
+        = article.category.name
       .post_item_description
         p.title
           a href=article_path(article)
@@ -19,8 +19,7 @@
   .categories_container
     p.sub_nav_title
       | Categories
-    a[href=""]
-
-    .category_item_container
-      |  Category 1 
-    a[href=""]
+    - Category.all.each do |category|
+      = link_to articles_path( category: category.id ) do
+        .category_item_container
+            = category.name
