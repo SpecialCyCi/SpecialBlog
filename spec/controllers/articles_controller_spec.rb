@@ -20,13 +20,13 @@ describe ArticlesController do
       categories; articles
       FactoryGirl.create_list :article, 5, category: categories.last
       get :index, { category: categories.first }
-      assigns(:articles).should eq categories.first.articles 
+      assigns(:articles).should eq categories.first.articles.all 
     end
   end
 
   describe "GET show" do
     it "assigns the requested article as @article" do
-      article = Article.create! valid_attributes
+      article = Article.create! valid_attributes.merge(category: categories.first.id)
       get :show, {:id => article.to_param}, valid_session
       assigns(:article).should eq(article)
     end
