@@ -47,4 +47,14 @@ RailsAdmin.config do |config|
       field :pictures
     end
   end
+  
+  config.model Work do
+
+    edit do
+      field :name
+      field :cover, :carrierwave
+      field :description
+    end
+  end
+
 end

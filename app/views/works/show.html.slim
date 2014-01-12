@@ -1,0 +1,18 @@
+.sub_nav_title
+  |  Work --  
+  = @work.name
+.split
+.row
+  .work_item_container
+   .work_item
+    - if !@work.cover.blank?
+      = image_tag @work.cover.thumb
+    - else
+      = image_tag "unknow_avatar.png"
+    .descripition
+      span.name
+        = @work.name 
+      span.time
+        = @work.created_at.strftime("%Y/%m/%d")
+.content_container
+  = markdown @work.description

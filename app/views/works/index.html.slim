@@ -1,0 +1,24 @@
+.sub_nav_title
+  |  Works 
+.split
+.works_container
+  - @works.each_with_index do |work, index|
+    - if index % 3 == 0
+      | <div class="row">
+    .work_item_container
+      .work_item
+        - if !work.cover.blank?
+          = link_to work do
+            = image_tag work.cover.thumb
+        - else
+          = link_to work do
+            = image_tag "unknow_avatar.png"
+        .descripition
+          span.name
+            = link_to work do
+              = work.name 
+          span.time
+            = work.created_at.strftime("%Y/%m/%d")
+    - if index % 3 == 2 || (index == @works.count - 1  && index % 3 != 2 )
+      | </div>
+
