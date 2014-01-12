@@ -1,5 +1,5 @@
 - comments.each do |comment|
-  .comment_item
+  .comment_item id="comment_#{comment.id}"
     .split
     img src = asset_path("unknow_avatar.png")
     .details
@@ -9,7 +9,7 @@
           a.quote id=comment.id nickname=comment.nickname quote
           - if admin_signed_in?
             | &nbsp;
-            a href="" delete
+            = link_to 'delete', comment, :confirm => "Are you sure?", :method => :delete, :remote => true
       .content
         p
           = markdown comment.content

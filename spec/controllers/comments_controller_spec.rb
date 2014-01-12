@@ -51,15 +51,17 @@ describe CommentsController do
     end
 
     it "should delete while login as admins" do
-      admin = Factory.create :admin
+      admin = FactoryGirl.create :admin
       sign_in admin
       expect {
-        delete :destroy, { id: Comment.first.id }
-      }.to change(Comment, :count).by(1)
+        xhr :delete, :destroy, { id: Comment.first.id }
+      }.to change(Comment, :count).by(-1)
     end
 
     it "should not delete while not admins" do
-
+      expect {
+        xhr :delete, :destroy, { id: Comment.first.id }
+      }.to change(Comment, :count).by(0)
     end
   end
 

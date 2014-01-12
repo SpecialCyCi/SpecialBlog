@@ -13,6 +13,13 @@ class CommentsController < ApplicationController
     redirect_to polymorphic_url(@commentable, nickname: @comment.nickname, content: @comment.content)
   end
   
+  def destroy
+    if admin_signed_in?
+      @comment = Comment.find(params[:id])
+      @comment.destroy 
+    end
+  end
+
   private
     def find_commentable
       params.each do |name, value|
