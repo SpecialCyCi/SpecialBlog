@@ -9,4 +9,6 @@ class Article
   validates_presence_of :category
   validates_presence_of :title
   validates_presence_of :content
+
+  default_scope order_by(:created_at => :desc)
 end

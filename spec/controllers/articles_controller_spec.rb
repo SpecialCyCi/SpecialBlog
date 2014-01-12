@@ -12,7 +12,7 @@ describe ArticlesController do
     it "assigns all articles as @articles" do
       articles
       get :index, {}, valid_session
-      assigns(:articles).should eq(articles.last(5))
+      assigns(:articles).should eq(articles.reverse!)
     end
 
     it "assigns category' articles" do

@@ -14,6 +14,7 @@ class Comment
   belongs_to :commentable, polymorphic: true
   embeds_one :parent_comment, class_name: "Comment"
   accepts_nested_attributes_for :parent_comment
+  default_scope order_by(:created_at => :desc)
 
   def commentable
     commentable_type.classify.constantize.find(commentable_id)

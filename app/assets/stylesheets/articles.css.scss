@@ -113,6 +113,9 @@
     font-weight: normal;
     font-size: 12px;
 }
+#comment_box_title{
+  margin-top: 10px;
+}
 @media only screen and (max-width: 40em) {
     /* make avatar image small in small screen */
     .comment_item img{
