@@ -20,6 +20,9 @@ gem 'redcarpet'
 gem 'coderay'
 
 # attachment
+gem "carrierwave"
+gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
+gem "mini_magick"
 
 group :development do
   gem 'better_errors'
