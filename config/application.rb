@@ -31,6 +31,8 @@ module SpecialBlog
 
     config.i18n.available_locales = ['zh-CN', :en]
     
+    config.action_view.sanitized_allowed_attributes = 'id', 'class', 'style'
+
     config.generators do |g|
       g.test_framework :rspec, fixture: true
       g.fixture_replacement :factory_girl, dir: 'spec/factories'

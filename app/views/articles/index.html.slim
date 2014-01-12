@@ -4,14 +4,14 @@
   - @articles.each do |article|
     .post_item
       .split
-      span
+      span.left_tag
         = article.category.name
       .post_item_description
         p.title
           a href=article_path(article)
             = article.title 
         p.summary
-          = article.content
+          = markdown truncate(article.content, length: 640, truncate_string: "...", escape: false)
         .time
           = l(article.created_at, format: :long)
   = will_paginate @articles

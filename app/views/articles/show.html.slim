@@ -5,7 +5,7 @@
     | ---- 
     = l(@article.created_at, format: :long)
   .content
-    = @article.content
+    = markdown(@article.content)
 #comments_container
   .title
     | Comments(
@@ -23,7 +23,7 @@
         = f.label :nickname
         = f.text_field :nickname, value: params.try(:[], :nickname)
       .input_div
-        = f.label :content
+        = f.label "Content(Markdown Support)"
         = f.text_area :content, value: params.try(:[], :content)
       .input_div
         = f.submit "Post"

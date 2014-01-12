@@ -1,23 +1,23 @@
 doctype html
 html
   head
-    title SpecialBlog
+    title
+      = content_for?(:title) ? yield(:title) : t("app_name")
     meta content=("text/html; charset=UTF-8") http-equiv="content-type" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
     script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js" 
     = stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true
-    = javascript_include_tag "application", "data-turbolinks-track" => true
     = csrf_meta_tags
   body
     /! header start
     .header_shadow_bar.clear
     #header.row
       .medium-7.large-6.columns.show-for-medium-up.logo_container
-        a href="" 
+        = link_to root_path do
           img alt="" src=(asset_path "logo.png") /
       .medium-5.large-6.columns.nav_container
         div
-          a href=""  Blog
+          = link_to "Blog", articles_path
           span |
           a href=""  Works
           span |

@@ -12,7 +12,7 @@
             a href="" delete
       .content
         p
-          = comment.content
+          = markdown comment.content
         - if comment.try(:parent_comment)
           - parent_comment = comment.parent_comment
           .reply_item
@@ -20,7 +20,7 @@
               = parent_comment.nickname
             .content
               p
-                = parent_comment.content
+                = markdown parent_comment.content
       .time
         = l(comment.created_at, format: :long)
 

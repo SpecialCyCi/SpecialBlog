@@ -6,13 +6,18 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 # gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
+
 gem "slim-rails"
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
+gem 'mongoid_auto_increment_id', "0.6.2"
 gem 'rails_admin', git: 'https://github.com/sferik/rails_admin'
 gem 'devise', github: 'plataformatec/devise'
 gem "will_paginate_mongoid"
+
+# markdown supports
+gem 'redcarpet'
+gem 'coderay'
 
 group :development do
   gem 'better_errors'
