@@ -1,0 +1,22 @@
+- content_for :title do
+  | Profile
+.sub_nav_title
+  |  Me 
+.split
+.profile_container
+  .avatar_container
+    img src=Setting.get("avatar")
+  .detail_container
+    .name
+      = Setting.get "name"
+    .contact
+      a href="mailto:#{Setting.get "email"}"
+        = Setting.get "email" 
+    .age
+      = Setting.get "age"  
+    .profession
+      = Setting.get "profession"
+    .location
+      = Setting.get "location"
+.content_container
+  = markdown Setting.get "description"
