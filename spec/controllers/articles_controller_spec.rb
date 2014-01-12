@@ -29,6 +29,7 @@ describe ArticlesController do
       article = Article.create! valid_attributes.merge(category: categories.first.id)
       get :show, {:id => article.to_param}, valid_session
       assigns(:article).should eq(article)
+      assigns(:article).visit_count.should eq 1
     end
   end
 

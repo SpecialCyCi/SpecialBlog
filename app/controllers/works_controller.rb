@@ -6,6 +6,7 @@ class WorksController < ApplicationController
   end
 
   def show
+    @work.inc(:visit_count => 1)
   end
 
   private

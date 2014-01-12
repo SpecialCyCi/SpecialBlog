@@ -7,6 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article.inc(:visit_count => 1)
     @comments = @article.comments.paginate(:page => params[:c_page], :per_page => 5)
     respond_to do |format|
       format.js { render :ajax_comments }

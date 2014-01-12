@@ -4,6 +4,7 @@ class Article
   field :title, type: String
   field :content, type: String
   field :comments_count, type: Integer, default: 0
+  field :visit_count, type: Integer, default: 0
   has_many :comments, as: :commentable
   has_many :pictures
   belongs_to :category

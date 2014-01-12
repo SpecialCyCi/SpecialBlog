@@ -18,6 +18,7 @@ describe WorksController do
       work = Work.create! valid_attributes
       get :show, {:id => work.to_param}, valid_session
       assigns(:work).should eq(work)
+      assigns(:work).visit_count.should eq 1
     end
   end
 end
