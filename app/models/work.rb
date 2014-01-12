@@ -5,6 +5,7 @@ class Work
   field :description, type: String
   field :asset_filename, type: String
   mount_uploader :cover, PictureUploader
+  has_many :pictures
   validates_presence_of :name
   validates_presence_of :description
   default_scope order_by(:created_at => :desc)

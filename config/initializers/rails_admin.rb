@@ -54,6 +54,7 @@ RailsAdmin.config do |config|
       field :name
       field :cover, :carrierwave
       field :description
+      field :pictures
     end
   end
 
