@@ -32,11 +32,19 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+  config.model Picture do
+    edit do
+      field :url
+      field :asset, :carrierwave
+    end
+  end
+
   config.model Article do
     edit do
       field :title
       field :category
-      field :content, :ck_editor
+      field :content
+      field :pictures
     end
   end
 end

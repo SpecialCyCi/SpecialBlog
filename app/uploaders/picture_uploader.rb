@@ -31,8 +31,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   #   # do something
   # end
 
-  process :read_dimensions
-
   # Create different versions of your uploaded files:
   version :thumb do
     process :resize_to_fill => [50, 50]
