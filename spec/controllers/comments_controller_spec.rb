@@ -5,12 +5,13 @@ describe CommentsController do
 
   let(:valid_attributes) { { "nickname" => "MyString", "content" => "comments"  } }
   let(:valid_session) { {} }
+  let(:category) { FactoryGirl.create :category }
   let(:article) { Article.first }
 
   # 每一个测试用例都会执行这里
   before do
     # 创建10篇文章
-    FactoryGirl.create_list :article, 10
+    FactoryGirl.create_list :article, 10, category: category
   end
 
   describe "POST create" do
