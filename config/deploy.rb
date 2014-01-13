@@ -36,7 +36,7 @@ end
 task :init_shared_path, :roles => :web do
   run "mkdir -p #{deploy_to}/shared/log"
   run "mkdir -p #{deploy_to}/shared/config"
-  run "mkdir -p #{deploy_to}/shared/tmp/pids"
+  run "mkdir -p #{deploy_to}/shared/tmp"
   run "mkdir -p #{deploy_to}/shared/public/uploads"
 end
 
