@@ -42,7 +42,6 @@ end
 
 task :link_shared_files, :roles => :web do
   run "ln -sf #{deploy_to}/shared/config/puma.rb #{deploy_to}/current/config/puma.rb"
-  run "ln -sf #{deploy_to}/shared/config/database.yml #{deploy_to}/current/config/database.yml"
   run "ln -sf #{deploy_to}/shared/config/production.rb #{deploy_to}/current/config/environments/production.rb"
   run "ln -sf #{deploy_to}/shared/public/uploads #{deploy_to}/current/public/uploads"
   run "ln -sf #{shared_path}/tmp/pids #{deploy_to}/current/tmp/pids"
