@@ -41,10 +41,8 @@ task :init_shared_path, :roles => :web do
 end
 
 task :link_shared_files, :roles => :web do
-  run "ln -sf #{deploy_to}/shared/config/puma.rb #{deploy_to}/current/config/puma.rb"
-  run "ln -sf #{deploy_to}/shared/config/production.rb #{deploy_to}/current/config/environments/production.rb"
   run "ln -sf #{deploy_to}/shared/public/uploads #{deploy_to}/current/public/uploads"
-  run "ln -sf #{shared_path}/tmp/pids #{deploy_to}/current/tmp/pids"
+  run "ln -sf #{shared_path}/tmp #{deploy_to}/current/tmp"
 end
 
 task :compile_assets, :roles => :web do
