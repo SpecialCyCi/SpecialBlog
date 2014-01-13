@@ -24,10 +24,15 @@ gem "carrierwave"
 gem "carrierwave-mongoid", :require => 'carrierwave/mongoid'
 gem "mini_magick"
 
+# puma server
+gem "puma"
+
 group :development do
   gem 'better_errors'
   gem "binding_of_caller"
   gem 'debugger', group: [:development, :test]
+  gem 'capistrano', '2.9.0', require: false
+  gem 'capistrano-rbenv'
 end
 
 group :test do
