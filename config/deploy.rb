@@ -41,6 +41,7 @@ task :init_shared_path, :roles => :web do
 end
 
 task :link_shared_files, :roles => :web do
+  run "ln -sf #{shared_path}/config/secret_token.rb #{deploy_to}/current/config/initializers/secret_token.rb"
   run "ln -sf #{deploy_to}/shared/public/uploads #{deploy_to}/current/public/uploads"
   run "ln -sf #{shared_path}/tmp #{deploy_to}/current/tmp"
 end
