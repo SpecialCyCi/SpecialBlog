@@ -1,3 +1,5 @@
+- content_for :description do
+  = @articles.map(&:title).join(",")
 .medium-8.large-9.columns
   p.sub_nav_title
     | Recently Posts

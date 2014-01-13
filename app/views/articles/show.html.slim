@@ -1,5 +1,7 @@
 - content_for :title do
   = @article.title
+- content_for :description do
+  = @article.title + "," + @article.content[0..340]
 #post_content
   .title
     = @article.title 

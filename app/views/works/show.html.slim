@@ -1,5 +1,7 @@
 - content_for :title do
   = @work.name
+- content_for :description do
+  = @work.name + "," + @work.description[0..320]
 .sub_nav_title
   |  Work --  
   = @work.name

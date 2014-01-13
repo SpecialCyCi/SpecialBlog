@@ -5,6 +5,7 @@ html
       = content_for?(:title) ? yield(:title) + " |  #{t("app_name")}": t("app_name")
     meta content=("text/html; charset=UTF-8") http-equiv="content-type" /
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
+    meta name="description" content = yield(:description)
     script src="http://cdn.staticfile.org/jquery/2.0.3/jquery.min.js" 
     = stylesheet_link_tag    "application", media: "all"
     = javascript_include_tag "application"

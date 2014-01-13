@@ -1,5 +1,7 @@
 - content_for :title do
   |  Works
+- content_for :descripition do
+  = @works.map(&:title).join(",")
 .sub_nav_title
   |  Works 
 .split
