@@ -25,3 +25,8 @@
       = link_to articles_path( category: category.id ) do
         .category_item_container
             = category.name
+  .links_container
+    p.sub_nav_title
+      | Links
+    - Links.all.each do |link|
+      = link_to link.name, link.url, :target => "_blank"
