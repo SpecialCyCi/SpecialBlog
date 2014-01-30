@@ -63,4 +63,4 @@ task :mongoid_migrate_database, :roles => :web do
 end
 
 before "deploy", :add_github_key
-after "deploy:finalize_update","deploy:symlink", :init_shared_path, :link_shared_files, :mongoid_create_indexes 
+after "deploy:finalize_update","deploy:symlink", :init_shared_path, :link_shared_files, :mongoid_create_indexes, :compile_assets 
