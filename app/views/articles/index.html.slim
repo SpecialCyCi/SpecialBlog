@@ -13,7 +13,7 @@
           a href=article_path(article)
             = article.title 
         p.summary
-          = markdown truncate(article.content, length: 640, truncate_string: "...", escape: false)
+          = strip_tags markdown truncate(article.content, length: 100, truncate_string: "...", escape: false)
         .time
           = l(article.created_at, format: :long)
   = will_paginate @articles
