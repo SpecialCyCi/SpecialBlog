@@ -8,6 +8,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 1.2'
 gem 'turbolinks'
+gem 'nprogress-rails'
 
 gem "slim-rails"
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
