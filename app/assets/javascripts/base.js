@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var baseReady = function() {
     var offset = 220;
     var duration = 500;
     $(window).scroll(function() {
@@ -8,4 +8,7 @@ $(document).ready(function() {
             $('.back_to_top').fadeOut(duration);
         }
     });
-});
+};
+
+$(document).ready(baseReady);
+$(document).on('page:load', baseReady);

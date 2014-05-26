@@ -1,4 +1,4 @@
-$(document).ready(function(){
+var articleReady = function(){
   // load more function;
   var currentPage = 1;
   $(".load_more").click(function(){
@@ -13,4 +13,7 @@ $(document).ready(function(){
     $("#comment_box_title").text("Reply :" + $(this).attr("nickname"));
     return false;
   });
-});
+};
+
+$(document).ready(articleReady);
+$(document).on('page:load', articleReady);
