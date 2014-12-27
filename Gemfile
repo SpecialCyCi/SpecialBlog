@@ -12,7 +12,7 @@ gem 'nprogress-rails'
 
 gem "slim-rails"
 gem 'mongoid', git: 'git://github.com/mongoid/mongoid.git'
-gem 'mongoid_auto_increment_id', "0.6.2"
+gem 'mongoid_auto_increment_id', "0.6.5"
 gem 'rails_admin', git: 'https://github.com/sferik/rails_admin'
 gem 'devise', github: 'plataformatec/devise'
 gem "will_paginate_mongoid"
