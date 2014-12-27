@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '4.0.2'
+gem 'rails', '4.2.0'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
@@ -34,7 +34,6 @@ group :development do
   gem "binding_of_caller"
   gem 'debugger', group: [:development, :test]
   gem 'capistrano', '2.9.0', require: false
-  gem 'capistrano-rbenv'
 end
 
 group :test do
@@ -55,6 +54,3 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
