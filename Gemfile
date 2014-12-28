@@ -20,6 +20,7 @@ gem "will_paginate_mongoid"
 # markdown supports
 gem 'redcarpet'
 gem 'coderay'
+gem 'sanitize'
 
 # attachment
 gem "carrierwave"

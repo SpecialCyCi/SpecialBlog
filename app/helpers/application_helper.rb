@@ -1,3 +1,5 @@
+require 'sanitize'
+
 module ApplicationHelper
   def markdown(text)
     options = {   
@@ -9,7 +11,7 @@ module ApplicationHelper
         :strikethrough =>true
       }
     markdown = Redcarpet::Markdown.new(HTMLwithCodeRay,options)
-    sanitize markdown.render(text)
+    Sanitize.fragment(markdown.render(text), Sanitize::Config::RELAXED).html_safe
   end
 
   class HTMLwithCodeRay < Redcarpet::Render::HTML

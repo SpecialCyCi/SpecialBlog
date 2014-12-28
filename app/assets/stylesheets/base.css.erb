@@ -2,9 +2,17 @@ body{
     font-family: Arial,Helvetica,sans-serif;
     -webkit-font-smoothing: antialiased;
 }
-a{
+
+/* Add transition effect to link. */
+:root a {
+    cursor: pointer;
     text-decoration: none;
+    transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
 }
+
 ::selection {
     background:#de29dc;
     color:#ffffff;
@@ -54,6 +62,12 @@ a{
     color: #5e5c5c;
     text-decoration: none;
     vertical-align: middle;
+    border-radius: 2px;
+    padding: 10px;
+}
+.nav_container a:hover{
+    color: white;
+    background: rgb(74, 189, 176);
 }
 .nav_container span{
     margin-left: 12px;
@@ -66,6 +80,7 @@ a{
     position: relative;
     top: 10px;
     background-color: #cccccc;
+    box-shadow: 0 0 5px #AEAEAE;
 }
 .footer_color_bar{
     display: block;
