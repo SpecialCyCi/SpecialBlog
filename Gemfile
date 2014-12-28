@@ -33,6 +33,7 @@ group :development do
   gem 'better_errors'
   gem "binding_of_caller"
   gem 'capistrano', '2.9.0', require: false
+  gem 'rvm-capistrano'
 end
 
 group :test do
