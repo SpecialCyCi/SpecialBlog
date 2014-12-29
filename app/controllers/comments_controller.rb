@@ -2,15 +2,15 @@ class CommentsController < ApplicationController
   before_filter :find_commentable
 
   def create
-    @comment = @commentable.comments.new(params[:comment])
-    @comment.parent_comment = Comment.find(params[:parent]) if params.try(:[], :parent)
-    @comment.save
-    if @comment.save
-      flash[:notice] = "Thank your comment."
-    else
-      flash[:notice] = @comment.errors.full_messages.first
-    end
-    redirect_to polymorphic_url(@commentable, nickname: @comment.nickname, content: @comment.content)
+#     @comment = @commentable.comments.new(params[:comment])
+    # @comment.parent_comment = Comment.find(params[:parent]) if params.try(:[], :parent)
+    # @comment.save
+    # if @comment.save
+      # flash[:notice] = "Thank your comment."
+    # else
+      # flash[:notice] = @comment.errors.full_messages.first
+    # end
+    # redirect_to polymorphic_url(@commentable, nickname: @comment.nickname, content: @comment.content)
   end
   
   def destroy

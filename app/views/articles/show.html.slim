@@ -10,24 +10,3 @@
     = l(@article.created_at, format: :long)
   .content
     = markdown(@article.content)
-#comments_container
-  .title
-    | Comments(
-    = @article.comments_count
-    | )
-  #comments_list
-    = render object: @comments, partial: "articles/comments"
-  .load_more
-    | load more...
-  .title id="comment_box_title"
-    | Leave comment
-  .comment_box
-    = form_for [ @article, Comment.new ] do |f|
-      .input_div
-        = f.label :nickname
-        = f.text_field :nickname, value: params.try(:[], :nickname)
-      .input_div
-        = f.label "Content(Markdown Support)"
-        = f.text_area :content, value: params.try(:[], :content)
-      .input_div
-        = f.submit "Post"
